@@ -107,17 +107,17 @@ img {
 
 .text-container {
   font-family: 'Roboto', sans-serif;
-  background-color: rgba(255, 255, 255, 0.1);
+
   padding: 20px;
   border-radius: 2px;
   text-align: center;
-  max-width: 60%;
+  max-width: 50%;
   margin: 20px auto; 
 }
 
 .text-container p {
   color: #ffffff;
-  font-weight: 300;
+  font-weight: 220;
   letter-spacing: 2px;
   margin-bottom: 20px;
 }
@@ -125,7 +125,9 @@ img {
 .text-container .btn {
   color: #FFEFB6;
   background: #000;
-  padding: 10px 40px;
+  padding: 20px 60px;
+  font-weight: 400;
+  letter-spacing: 5px;
   text-decoration: none;
   transition: background .5s;
   border-radius: 5px;
@@ -197,3 +199,9 @@ a:active {
 }
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,500,700&display=swap');
+
+.divider {
+  border-top: 1px solid #ffffff;
+  width: 80%;
+  margin: 20px auto;
+}
