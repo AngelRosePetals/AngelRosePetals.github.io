@@ -106,15 +106,15 @@ img {
 
 .footer { 
   background: #000;
-  height: 60px; 
-  padding-bottom: 100px;
+  height: 80px; 
+  padding-bottom: 80px;
 }
 
 .footer p { 
   color: #FFEFB6;
   font-size: 14px;  
-  height: 60px; 
-  line-height: 60px;
+  height: 80px; 
+  line-height: 80px;
   margin: 0;  
 }
 
