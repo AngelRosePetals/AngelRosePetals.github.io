@@ -1,3 +1,33 @@
+<<<<<<< Updated upstream
+=======
+:root {
+  --yellow: #ffefb6;
+  --white: #ffffff;
+  --green: hwb(165 6% 66%);
+  --black: #000000;
+  --gray: #999999;
+  --card-bg: #0B4537;
+  --card-border: #093B2F;
+  --shadow: rgba(0, 0, 0, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Lexend";
+  src: url("/fonts/LexendZetta-VariableFont_wght.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-Medium.ttf");
+  font-display: swap;
+}
+
+>>>>>>> Stashed changes
 body {
   margin: 0;
   padding: 0;
@@ -15,6 +45,7 @@ body {
   padding: 0 10px;
 }
 
+<<<<<<< Updated upstream
 img {
   max-width: 100%;
   height: auto;
@@ -24,6 +55,158 @@ img {
   background: #000;
   height: 80px;
   width: 100%;
+=======
+nav {
+  padding: 0.5rem 0;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: var(--black);
+  font-size: 1.05rem;
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+
+nav > p {
+  padding: 0 1rem;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+main {
+  margin: auto;
+  margin-bottom: 50px;
+  max-width: 80vw;
+  width: 1000px;
+  padding: 2rem 0;
+}
+
+h2 {
+  letter-spacing: 4px;
+  font-weight: 200;
+}
+
+hr {
+  border: 1px solid var(--gray);
+  margin: 1.5rem auto;
+}
+
+.nav-icon {
+  max-height: 50px;
+  margin-left: auto;
+  padding: 0 1rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.logo-container {
+  max-width: 75vw;
+  width: 775px;
+  margin: auto;
+  display: grid;
+  column-gap: 1rem;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-icon {
+  width: 25vw;
+  max-width: 250px;
+}
+
+.logo-text {
+  color: var(--yellow);
+  font-family: "Lexend", sans-serif;
+  font-size: 1.75rem;
+}
+
+.btn-link {
+  display: block;
+  margin: auto;
+  margin-top: 1vh;
+  padding: 1rem 2rem;
+  background: var(--black);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 200;
+  border-radius: 10px;
+  width: 50%;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
+}
+
+.card {
+  backdrop-filter: blur(5px);
+  background: var(--card-bg);
+  padding: 1rem 2rem;
+  color: var(--white);
+  border: black;
+  border: 2px solid var(--card-border);
+  border-radius: 7px;
+  text-decoration: none;
+  font-weight: 100;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transform-origin: center;
+}
+
+.card:visited {
+  color: var(--white);
+}
+
+.card:hover {
+background-color: #093B2F;
+transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border 0.3s ease-in-out, background 0.6s ease; /* Adjust the duration for the background transition */
+transform-origin: center;
+}
+
+
+
+.card > img {
+  width: 30%;
+  color: var(--yellow);
+  max-width: 150px;
+  filter: brightness(1.2);
+  image-rendering: crisp-edges;
+}
+
+.cta {
+  font-size: 1.75rem;
+  font-weight: 300;
+  letter-spacing: 0.2rem;
+}
+
+.card-sep {
+  width: 20%;
+  border: 2px solid var(--yellow);
+}
+
+.card-text {
+  font-weight: 200;
+  letter-spacing: .1rem;
+  word-spacing: 0;
+  line-height: 2rem;
+}
+
+footer {
+  height: 50px;
+  position: fixed;
+  width: 100%;
+  top: calc(100vh - 50px);
+  display: flex;
+  justify-content: left;
+  padding-left: 2rem;
+  background: var(--black);
+  color: var(--yellow);
+>>>>>>> Stashed changes
 }
 
 .nav ul {
