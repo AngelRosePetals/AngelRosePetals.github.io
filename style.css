@@ -27,11 +27,6 @@ img {
   text-align: center; 
 }
 
-.header .container {
-  position: relative;
-  top: 200px;
-}
-
 .header h1 {
   color: #ffffff;
   line-height: 100px; 
@@ -101,7 +96,6 @@ img {
 }
 
 .footer { 
-  position: fixed;
   bottom: 0;
   background: #000;
   height: 80px; 
