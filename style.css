@@ -107,7 +107,6 @@ img {
 
 .text-container {
   font-family: 'Roboto', sans-serif;
-
   padding: 20px;
   border-radius: 2px;
   text-align: center;
@@ -188,6 +187,10 @@ img {
   .main img {
     width: 100%;
   }
+
+  .text-container .btn {
+    padding: 15px 30px; 
+  }
 }
 
 a:link,
@@ -205,8 +208,3 @@ a:active {
   width: 80%;
   margin: 20px auto;
 }
-
-@media (max-width: 500px) {
-  .text-container .btn {
-    padding: 15px 30px; 
-  }
