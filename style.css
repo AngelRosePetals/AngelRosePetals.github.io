@@ -40,6 +40,10 @@ body {
   }
 }
 
+@media (max-width: 1250px) {
+  /* … */
+}
+
 .header p {
   color: #FFEFB6;
   font-weight: 500;
