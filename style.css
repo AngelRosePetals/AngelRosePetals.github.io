@@ -106,6 +106,8 @@ img {
 }
 
 .footer { 
+  position: fixed;
+  bottom: 0;
   background: #000;
   height: 80px; 
   padding-bottom: 80px;
