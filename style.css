@@ -6,7 +6,7 @@ html, body {
 body {
   font-family: 'Lexend Zetta', sans-serif;
   font-weight: 100;
-  color: white;
+  color: #ffffff;
 }
 
 .container {
@@ -116,6 +116,7 @@ img {
   font-size: 14px;  
   height: 80px; 
   line-height: 80px;
+  text-align: left;
   margin: 0;  
 }
 
