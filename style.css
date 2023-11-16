@@ -5,6 +5,7 @@ body {
   font-weight: 100;
   color: #ffffff;
   padding-bottom: 80px;
+  background-color: #105545 
 }
 
 .container {
@@ -21,7 +22,7 @@ img {
 }
 
 .header {
-  background: url(https://i.imgur.com/9PfGp7Y.jpg) no-repeat center center; 
+  background-color: #105545;
   background-size: cover;
   text-align: center; 
 }
