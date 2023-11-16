@@ -4,7 +4,7 @@ html, body {
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Lexend Zetta', sans-serif;
   font-weight: 100;
 }
 
@@ -143,10 +143,4 @@ a:link {
    
   body {
     color: white;
-  }
-
-  .responsive {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
   }
