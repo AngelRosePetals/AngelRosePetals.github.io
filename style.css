@@ -150,10 +150,6 @@ hr {
   transform-origin: center;
 }
 
-.card:visited {
-  color: var(--white);
-}
-
 .card:hover {
   background-color: #093B2F;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border 0.3s ease-in-out, background 0.6s ease; /* Adjust the duration for the background transition */
@@ -172,6 +168,7 @@ hr {
   font-size: 1.75rem;
   font-weight: 300;
   letter-spacing: 0.2rem;
+  color: white;
 }
 
 .card-sep {
@@ -184,6 +181,7 @@ hr {
   letter-spacing: .1rem;
   word-spacing: 0;
   line-height: 2rem;
+  color: white;
 }
 
 footer {
