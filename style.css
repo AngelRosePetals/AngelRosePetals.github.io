@@ -327,3 +327,19 @@ ul.cards li p {
     flex-direction: column;
   }
 }
+
+@media screen and (max-width: 448px) {
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+
+}
