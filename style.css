@@ -73,8 +73,11 @@ hr {
 body {
   background-color: var(--green);
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  overflow: hidden;
+  grid-template:
+    "aside nav"
+    "aside main"
+    "aside footer" / 1fr 1fr;
+  overflow: auto;
 }
 
 a,
@@ -143,6 +146,7 @@ a.button:active {
 }
 
 nav {
+  grid-area: nav;
   padding: 2rem;
   display: flex;
   flex-direction: row;
@@ -188,18 +192,11 @@ ul.nav-links {
 }
 
 main {
+  grid-area: main;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
   padding: 2rem;
   gap: 2rem;
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  overflow: auto;
 }
 
 section {
@@ -213,18 +210,26 @@ section {
 }
 
 aside {
+  grid-area: aside;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
   height: 100%;
 }
 
 aside figure {
   width: auto;
-  height: 100%;
-  position: relative;
+  height: 100vh;
+  position: sticky;
+  top: 0;
   margin: 0;
   padding: 0;
+}
+
+@supports (height: 100dvh) {
+
+  aside figure {
+    height: 100dvh;
+  }
 }
 
 aside figure img {
@@ -247,6 +252,7 @@ aside figure figcaption {
 }
 
 footer {
+  grid-area: footer;
   width: 100%;
   display: flex;
   align-items: center;
@@ -307,19 +313,28 @@ ul.cards li p {
   }
 
   body {
-    grid-template-columns: 1fr;
+    grid-template: "nav" "main" "aside" "footer" / 1fr;
     overflow-y: auto;
     height: fit-content;
   }
 
-  .content {
-    order: 1;
-    height: fit-content;
+  aside {
+    height: 50vh;
+    padding: 2rem;
   }
 
-  aside {
-    order: 2;
-    height: 100vh;
+  aside figure {
+    position: relative;
+    height: 100%;
+  }
+
+  aside figure img {
+    border-radius: 0.25rem;
+  }
+
+  aside figure figcaption {
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
   }
 
   footer {
