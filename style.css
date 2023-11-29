@@ -40,6 +40,7 @@ h4 {
   margin: 0;
   padding: 0;
   color: var(--yellow);
+  word-wrap: normal;
 }
 
 @supports (text-wrap: balance) {
@@ -349,16 +350,15 @@ ul.cards li {
   padding: 2rem;
   background-color: var(--black);
   border-radius: 0.25rem;
-  transition: transform 0.1s ease-in;
 }
 
-ul.cards a li h3,
-ul.cards a li h4 {
+ul.cards li a {
+  transition: transform 0.1s ease-in;
   text-decoration: underline;
   text-underline-offset: 0.25rem;
 }
 
-ul.cards a li:active {
+ul.cards li a:active {
   transform: translateY(0.1rem);
 }
 
@@ -413,7 +413,7 @@ ul.cards li p {
   }
 }
 
-@media screen and (max-width: 448px) {
+@media screen and (max-width: 768px) {
   h1 {
     font-size: 2rem;
   }
