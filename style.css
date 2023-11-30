@@ -11,7 +11,7 @@
 
 html,
 body {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -21,6 +21,7 @@ body {
   letter-spacing: 0.025rem;
   line-height: 1.5;
   font-weight: 300;
+  background-color: var(--green);
   color: var(--yellow);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -30,9 +31,8 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "Lexend Zetta", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Lexend Zetta", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   letter-spacing: 0rem;
   line-height: 1.25;
   font-weight: 500;
@@ -40,6 +40,7 @@ h4 {
   margin: 0;
   padding: 0;
   color: var(--yellow);
+  word-wrap: normal;
 }
 
 @supports (text-wrap: balance) {
@@ -54,14 +55,22 @@ h4 {
 
 h1 {
   font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
 h2 {
   font-size: 2rem;
+  margin-bottom: 0.75rem;
 }
 
 h3 {
   font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+h4 {
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
 }
 
 hr {
@@ -70,13 +79,21 @@ hr {
   margin: 1rem 0;
 }
 
-body {
-  background-color: var(--green);
+body[data-page="home"] {
   display: grid;
   grid-template:
     "aside nav"
     "aside main"
     "aside footer" / 1fr 1fr;
+  overflow: auto;
+}
+
+body[data-page="resources"] {
+  display: grid;
+  grid-template:
+    "nav"
+    "main"
+    "footer" / 1fr;
   overflow: auto;
 }
 
@@ -87,13 +104,12 @@ a:visited {
   text-decoration: none;
 }
 
-a span {
+a>span {
   text-decoration: underline;
   text-underline-offset: 0.25rem;
 }
 
 details {
-  padding: 1rem;
   width: 100%;
 }
 
@@ -102,8 +118,15 @@ details+details {
 }
 
 details summary {
+  padding: 1rem;
   cursor: pointer;
   font-weight: 500;
+}
+
+details p {
+  padding: 1rem;
+  margin: 0;
+  padding-top: 0;
 }
 
 .actions {
@@ -158,17 +181,21 @@ nav {
   position: sticky;
   top: 0;
   background-color: var(--green);
+  height: 6rem;
+  z-index: 2;
 }
 
 .nav-logomark {
   display: flex;
   flex-direction: row;
-  align-items: baseline;
+  align-items: center;
   gap: 1.5rem;
 }
 
 .nav-logo {
-  height: 1rem;
+  width: 1.75rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .nav-wordmark {
@@ -199,21 +226,34 @@ main {
   gap: 2rem;
 }
 
+body[data-page="resources"] main {
+  max-width: 108rem;
+  margin: 0 auto;
+}
+
 section {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   display: flex;
   flex-direction: column;
   align-items: start;
   justify-content: start;
-  gap: 0rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+}
+
+section>img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0.25rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
 aside {
   grid-area: aside;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  min-height: 100%;
 }
 
 aside figure {
@@ -221,18 +261,20 @@ aside figure {
   height: 100vh;
   position: sticky;
   top: 0;
+  bottom: 0;
   margin: 0;
   padding: 0;
 }
 
 @supports (height: 100dvh) {
-
   aside figure {
     height: 100dvh;
   }
 }
 
 aside figure img {
+  min-width: 100%;
+  min-height: 100%;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -248,7 +290,10 @@ aside figure figcaption {
   align-items: center;
   justify-content: end;
   color: var(--white);
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+  background-image: linear-gradient(to top,
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0));
 }
 
 footer {
@@ -262,8 +307,33 @@ footer {
   color: var(--yellow);
 }
 
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap: 0.5rem;
+  padding: 2rem;
+  background-color: var(--black);
+  border-radius: 0.25rem;
+  width: 100%;
+}
+
+.card h3 {
+  margin: 0;
+}
+
+.card+.card {
+  margin-top: 1rem;
+}
+
+.card .links p>a::after {
+  content: "-";
+}
+
 ul.cards {
   display: grid;
+  width: 100%;
   grid-template-columns: 1fr;
   gap: 1rem;
   padding: 0;
@@ -276,19 +346,19 @@ ul.cards li {
   flex-direction: column;
   align-items: start;
   justify-content: start;
-  gap: 1rem;
+  gap: 0.5rem;
   padding: 2rem;
   background-color: var(--black);
   border-radius: 0.25rem;
-  transition: transform 0.1s ease-in;
 }
 
-ul.cards li:hover h3 {
+ul.cards li a {
+  transition: transform 0.1s ease-in;
   text-decoration: underline;
   text-underline-offset: 0.25rem;
 }
 
-ul.cards li:active {
+ul.cards li a:active {
   transform: translateY(0.1rem);
 }
 
@@ -312,7 +382,7 @@ ul.cards li p {
     width: 100%;
   }
 
-  body {
+  body[data-page="home"] {
     grid-template: "nav" "main" "aside" "footer" / 1fr;
     overflow-y: auto;
     height: fit-content;
@@ -343,18 +413,20 @@ ul.cards li p {
   }
 }
 
-@media screen and (max-width: 448px) {
-
+@media screen and (max-width: 768px) {
   h1 {
     font-size: 2rem;
   }
 
   h2 {
-    font-size: 1.25rem;
+    font-size: 1.6rem;
   }
 
   h3 {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
 
+  h4 {
+    font-size: 1.1rem;
+  }
 }
